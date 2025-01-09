@@ -1,6 +1,6 @@
 import { createChatCompletion, extractContent } from "../utils/AiUtils";
 
-export default async ({ airportCode, airportData, question }) => {
+const GetAiResponse = async ({ airportCode, airportData, question }) => {
   const jsonResponseFormat = JSON.stringify({
     response: "The response to the user question.",
   });
@@ -66,3 +66,5 @@ const userText = `
   - Ensure that you have answered all parts of the question.
   - If you cannot answer the question with the given data, explain what is preventing you from answering the question, e.g. missing data or incoherent question.
 `;
+
+export default GetAiResponse;

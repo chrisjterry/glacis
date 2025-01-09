@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Input, Button, FlightsTable, Error, Text } from "../components";
 import { getFlightData } from "../utils/FlightUtils";
 
-export default () => {
+const Flights = () => {
   const [airportCode, setAirportCode] = useState("");
   const [data, setData] = useState();
   const [error, setError] = useState();
@@ -47,3 +47,5 @@ export default () => {
     </>
   );
 };
+
+export default Flights;

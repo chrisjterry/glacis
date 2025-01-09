@@ -4,7 +4,7 @@ import { filterFlightData } from "../utils/FlightUtils";
 import AirportCodes from "../constants/AirportCodes";
 import getAiResponse from "../services/GetAiResponse";
 
-export default () => {
+const AiFlights = () => {
   const [airportCode, setAirportCode] = useState("");
   const [question, setQuestion] = useState("");
   const [response, setResponse] = useState("");
@@ -16,7 +16,7 @@ export default () => {
 
     try {
       if (!airportCode || !question)
-        throw "Airport code and question required.";
+        throw new Error("Airport code and question required.");
       const airportData = filterFlightData(airportCode);
       const aiResponse = await getAiResponse({
         airportCode,
@@ -72,3 +72,5 @@ export default () => {
     </>
   );
 };
+
+export default AiFlights;
