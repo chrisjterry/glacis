@@ -1,3 +1,5 @@
+import flightData from "../constants/FlightData.json";
+
 export const getFlightData = async (airportCode) => {
   const data = {};
   const apiKey = process.env.REACT_APP_FLIGHT_API;
@@ -23,5 +25,11 @@ export const getFlightData = async (airportCode) => {
       country,
       flights: data[country],
     };
+  });
+};
+
+export const filterFlightData = (airportCode) => {
+  return flightData.filter((obj) => {
+    return obj.destination_airport === airportCode;
   });
 };

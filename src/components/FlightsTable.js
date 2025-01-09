@@ -6,7 +6,6 @@ import {
 } from "@tanstack/react-table";
 
 export const FlightsTable = ({ data }) => {
-  console.log(data);
   const columns = [
     { header: "Country", accessorKey: "country" },
     { header: "Number of Flights", accessorKey: "flights" },
