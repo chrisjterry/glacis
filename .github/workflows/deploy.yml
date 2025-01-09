@@ -14,6 +14,10 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      REACT_APP_FLIGHT_API: ${{ secrets.REACT_APP_FLIGHT_API }}
+      REACT_APP_OPENAI_API: ${{ secrets.REACT_APP_OPENAI_API }}
+      REACT_APP_OPENAI_MODEL: ${{ secrets.REACT_APP_OPENAI_MODEL }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
