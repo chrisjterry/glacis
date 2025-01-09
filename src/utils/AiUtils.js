@@ -1,7 +1,7 @@
 import { OpenAI } from "openai";
 
 const getAiInstance = () => {
-  const openaiApiKey = process.env.REACT_APP_OPENAI_API || "not-valid";
+  const openaiApiKey = process.env.REACT_APP_OPENAI_API;
   return new OpenAI({
     apiKey: openaiApiKey,
     dangerouslyAllowBrowser: true,
@@ -10,7 +10,7 @@ const getAiInstance = () => {
 
 export const createChatCompletion = async ({ messages, temperature }) => {
   const openai = getAiInstance();
-  const model = process.env.REACT_APP_OPENAI_MODEL || "not-valid";
+  const model = process.env.REACT_APP_OPENAI_MODEL;
   return await openai.chat.completions.create({
     model,
     messages,
